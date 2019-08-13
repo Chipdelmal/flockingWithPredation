@@ -16,6 +16,7 @@ to setup
   reset-ticks
 end
 
+
 ;;Go!!!!!!!!!!!!---------------------------------------------------------------------------------------------------
 to go
   preyFlockOrAvoid doves hawks dovesVisionRange dovesVisionAngle dovesAvoidanceMinTurn dovesAvoidanceMaxTurn dovesNoiseInMovement dovesFlock
@@ -64,7 +65,7 @@ to createHawks [numberOfIndividuals]
     set color red
     setxy random-xcor random-ycor
     if hawksPen = true[pen-down]
-    set size 3.5
+    set size 10
     set individualSpeed hawksBaseSpeed
   ]
 end
@@ -75,7 +76,7 @@ to createDoves [numberOfIndividuals]
     set color blue + random 10
     setxy random-xcor random-ycor
     if dovesPen = true[pen-down]
-    set size 2
+    set size 5
     set flockmates no-turtles
     set individualSpeed (dovesBaseSpeed + random-float dovesSpeedVariationRange)
     set age random 50
@@ -191,11 +192,11 @@ end
 GRAPHICS-WINDOW
 450
 10
-1406
-448
+1409
+470
 -1
 -1
-4.7214
+1.0
 1
 10
 1
@@ -205,10 +206,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--100
-100
--45
-45
+-475
+475
+-225
+225
 1
 1
 1
@@ -223,8 +224,8 @@ SLIDER
 dovesPopulation
 dovesPopulation
 0
-500
-500.0
+5000
+5000.0
 1
 1
 individuals
@@ -438,8 +439,8 @@ SLIDER
 hawksPopulation
 hawksPopulation
 0
-20
-4.0
+100
+25.0
 1
 1
 individuals
@@ -508,7 +509,7 @@ SWITCH
 630
 hawksPen
 hawksPen
-0
+1
 1
 -1000
 
@@ -521,7 +522,7 @@ hawksKillingRange
 hawksKillingRange
 0
 10
-4.0
+1.0
 1
 1
 patches
